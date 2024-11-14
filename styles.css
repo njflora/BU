@@ -1,0 +1,478 @@
+@import url('https://fonts.cdnfonts.com/css/jaapokki');
+@import url('https://fonts.cdnfonts.com/css/albula-condensed-pro');
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jaapokki', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .logo{
+    text-align: center;
+}
+img{@media screen and (min-width: 768px) {
+    width: 20%; !important;
+    height: auto; !important;
+    left: 0; !important;
+}}
+
+header nav {
+    position: absolute;
+    right: 1vw; /* Keep the navigation on the right side */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-family: 'Albula Condensed Pro', sans-serif;
+    font-weight: lighter;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    --a: -45deg; /* control the angle */
+    --t: .23em; /* thickness of the underline */
+}
+
+nav ul li a span {
+    --_s: calc(var(--t)*cos(var(--a)));
+    background:
+            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0)
+            bottom/var(--i,90%) var(--t) no-repeat;
+    padding: 0 .25em calc(var(--t) + .1em);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: .3s;
+    cursor: pointer;
+}
+nav ul li a:hover span {
+    --i: 100%;
+}
+/*nav ul li a:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 0.5vh;
+
+}*/
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        text-align: center;     /* Center the items */
+    }
+
+    nav ul {
+        display: block;        /* Display nav links in a block for vertical stacking */
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;        /* Stack the nav links vertically */
+        margin: 10px 10px;
+    }
+}
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('img/HERO6.jpg') ; /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content p {
+    font-family: 'Albula Condensed Pro', sans-serif;
+    font-weight: lighter;
+    font-size: 4em;
+    margin-bottom: 20px;
+    /*-webkit-text-stroke:0.01px #ffffff;*/
+    color: transparent;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -1500px 0;
+    animation: backcolor 2s ease-in-out forwards;
+}
+@keyframes backcolor {
+    100%{
+        background-position: 0 0;
+    }
+
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 7%;
+    /*gap: 20px;*/
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.cta-buttons .btn {
+    font-family: 'Albula Condensed Pro', sans-serif;
+    font-weight: lighter;
+    position: relative;
+    white-space: nowrap;
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2em;
+    opacity: 0; /* Initially hide the text */
+    animation: fadeIn 2s ease-in-out 1 forwards; /* Fade in over 2 seconds */
+    animation-delay: 1.5s; /* Start the animation after 8 seconds */
+
+}
+.cta-buttons .btn{
+    --a: -45deg; /* control the angle */
+    --t: .23em; /* thickness of the underline */
+    color: white;
+}
+.cta-buttons .btn span{
+    --_s: calc(var(--t)*cos(var(--a)));
+    background:
+            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0)
+            bottom/var(--i,90%) var(--t) no-repeat;
+    padding: 0 .25em calc(var(--t) + .1em);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: .3s;
+    cursor: pointer;
+}
+.cta-buttons .btn:hover span{
+    --i: 100%;
+}
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0;
+}
+
+#sig {
+    position: absolute;
+    right: 10px;
+    font-size: 0.6em;
+}
+
+#cw {
+    font-size: 0.9em;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.6em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+footer a{
+    text-decoration: inherit;
+    color: white;
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jaapokki', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .logo {
+    text-align: center;
+}
+
+header nav {
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-family: 'Albula Condensed Pro', sans-serif;
+    font-weight: lighter;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover span {
+    --i: 100%;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header img{
+        width: 40%;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+}
+
+/* Adjust text size on smaller screens */
+@media (max-width: 768px) {
+    .hero-content p {
+        font-size: 3em; /* Adjust text size */
+        margin-bottom: 10px;
+    }
+}
+
+/* Adjust button sizes for mobile */
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin: 5vh 10%;
+    }
+
+    .cta-buttons .btn {
+        font-size: 20px; /* Smaller font size for mobile */
+        margin-bottom: 7vh; /* Add space between stacked buttons */
+    }
+}
+
+/* Footer Styling */
+footer {
+    color: WHITE;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Adjust footer layout on smaller screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px;
+    }
+}
+
+/* Fade in animation */
+@keyframes backcolor {
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/*zenbook fold*/
+@media (device-width: 853px) and (device-height: 1280px){
+    .cta-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20vh 5%;
+        margin-top: 7%;
+    }
+}
+/*nesthub max*/
+@media (device-width: 1280px) and (device-height: 800px){
+    .hero-content p{
+        margin-top: 20vh;
+    }
+    .cta-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20vh 5%;
+        margin-top: 7%;
+    }
+}
+/*nesthub*/
+@media (device-width: 1024px) and (device-height: 600px){
+    .hero-content p{
+        margin-top: 20vh;
+        font-size: 4em;
+    }
+    .cta-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20vh 5%;
+        margin-top: 7%;
+    }
+}
+/*sfcpro*/
+@media (device-width: 912px) and (device-height: 1368px){
+    nav ul{
+        display: block;
+        padding-bottom: 10vh;
+    }
+    nav ul li{
+        margin: 2vh 2vh;
+    }
+    nav ul li a{
+        font-size: 2em;
+    }
+    header img{
+        width: 50%;
+        margin-top: 10vh;
+    }
+    .hero-content p{
+        margin-top: 20vh;
+        font-size: 4em;
+    }
+    .cta-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20vh 5%;
+        margin-top: 7%;
+    }
+    footer{
+        font-size: 1.8em;
+    }
+}
+/*ipadpro*/
+@media (device-width: 1024px) and (device-height: 1366px){
+    nav ul{
+        display: block;
+        padding-bottom: 10vh;
+    }
+    nav ul li{
+        margin: 2vh 2vh;
+    }
+    nav ul li a{
+        font-size: 2em;
+    }
+    header img{
+        width: 50%;
+        margin-top: 10vh;
+    }
+    .hero-content p{
+        margin-top: 20vh;
+        font-size: 4em;
+    }
+    .cta-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20vh 5%;
+        margin-top: 7%;
+    }
+    footer{
+        font-size: 1.8em;
+    }
+}
+/*ipadair*/
+@media (device-width: 820px) and (device-height: 1180px){
+    nav ul{
+        display: block;
+        padding-bottom: 10vh;
+    }
+    nav ul li{
+        margin: 2vh 2vh;
+    }
+    nav ul li a{
+        font-size: 2em;
+    }
+    header img{
+        width: 50%;
+        margin-top: 10vh;
+    }
+    .hero-content p{
+        margin-top: 20vh;
+        font-size: 4em;
+    }
+    .cta-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20vh 5%;
+        margin-top: 7%;
+    }
+    footer{
+        font-size: 1.8em;
+    }
+}

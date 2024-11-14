@@ -1,0 +1,708 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jaapokki', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: transparent;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    text-align: center;
+}
+
+header nav {
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-family: 'Albula Condensed Pro', sans-serif;
+    font-weight: lighter;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    --a: -45deg; /* control the angle */
+    --t: .23em; /* thickness of the underline */
+}
+
+nav ul li a span {
+    --_s: calc(var(--t)*cos(var(--a)));
+    background:
+            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0)
+            bottom/var(--i,90%) var(--t) no-repeat;
+    padding: 0 .25em calc(var(--t) + .1em);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: .3s;
+    cursor: pointer;
+}
+nav ul li a:hover span {
+    --i: 100%;
+}
+/* Contact Section */
+.contact-container {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('img/contact1.jpg');
+    background-size: cover;
+    background-position: bottom;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.contact-section {
+    padding: 5vh 3vw;
+    text-align: center;
+    background-color: rgba(8, 14, 44, 0.6);
+    max-width: 800px;
+    margin-top: 18vh;
+    border-radius: 8px;
+}
+
+.contact-section h2, .contact-section p {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.contact-form label {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6788FF;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #333757;
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0;
+}
+footer p {
+    color: #f4f4f4;
+    margin-top: 20px;
+    font-size: 0.9em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+/* Media Queries for different screen sizes */
+
+/* Small mobile devices (iPhone SE and similar) */
+@media (device-width: 375px) and (device-height: 667px) {
+    header img {
+        width: 40%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    .contact-container {
+        padding-bottom: 6vh;
+        margin-bottom: 0;
+    }
+
+    .contact-section {
+        padding-top: 4vh;
+        margin-top: 15vh;
+        padding-bottom: 4vh;
+        margin-bottom: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .contact-section h2 {
+        font-size: 1.6em;
+    }
+
+    .contact-section p {
+        font-size: 1.1em;
+    }
+
+    .contact-form label {
+        font-size: 1em;
+    }
+
+    .contact-form button {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    footer {
+        padding-top: 12vh;
+        margin-top: 0vh;
+        bottom: 0;
+        top: 100%;
+    }
+}
+/*S8*/
+@media (device-width: 360px) and (device-height: 740px) {
+    header img {
+        width: 40%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    .contact-container {
+        padding-bottom: 6vh;
+        margin-bottom: 0;
+    }
+
+    .contact-section {
+        padding-top: 4vh;
+        margin-top: 15vh;
+        padding-bottom: 4vh;
+        margin-bottom: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .contact-section h2 {
+        font-size: 1.6em;
+    }
+
+    .contact-section p {
+        font-size: 1.1em;
+    }
+
+    .contact-form label {
+        font-size: 1em;
+    }
+
+    .contact-form button {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    footer {
+        padding-top: 6vh;
+        margin-top: 0vh;
+        bottom: 0;
+        top: 100%;
+    }
+}
+/* Medium mobile devices (e.g., iPhone XR, Galaxy S8) */
+@media (min-width: 376px) and (max-width: 768px) {
+    header img {
+        width: 45%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    .contact-container {
+        padding-top: 0;
+        margin-top: 0;
+        padding-bottom: 5vh;
+    }
+
+    .contact-section {
+        padding-top: 5vh;
+        margin-top: 5vh;
+        padding-bottom: 5vh;
+        margin-bottom: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .contact-section h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-section p {
+        font-size: 1.2em;
+    }
+
+    .contact-form label {
+        font-size: 1.1em;
+    }
+
+    .contact-form button {
+        font-size: 1.1em;
+        padding: 10px 15px;
+    }
+
+    footer {
+        bottom: 0;
+        top: 100%;
+    }
+}
+
+/* Tablets (portrait and landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header img {
+        width: 45%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+        font-size: 2em;
+    }
+
+    .contact-container {
+        padding-top: 0;
+        margin-top: 0;
+        padding-bottom: 5vh;
+    }
+
+    .contact-section {
+        margin-top: 10vh;
+        padding: 6vh 5vw;
+        max-width: 80vw;
+    }
+
+    .contact-section h2 {
+        font-size: 2.2em;
+    }
+
+    .contact-section p {
+        font-size: 1.4em;
+    }
+
+    .contact-form label {
+        font-size: 1.2em;
+    }
+
+    .contact-form button {
+        font-size: 1.2em;
+        padding: 12px 18px;
+    }
+}
+footer {
+    bottom: 0;
+    top: 90%;
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+    .contact-section {
+        padding: 7vh 6vw;
+        max-width: 1000px;
+    }
+
+    .contact-section h2 {
+        font-size: 2.5em;
+    }
+
+    .contact-section p {
+        font-size: 1.6em;
+    }
+
+    .contact-form label {
+        font-size: 1.3em;
+    }
+
+    .contact-form button {
+        font-size: 1.3em;
+        padding: 12px 25px;
+    }
+}
+/*unique viewports*/
+/* Surface Duo (Portrait) */
+@media (device-width: 540px) and (device-height: 720px) and (orientation: portrait) {
+    header img {
+        width: 40%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    .contact-container {
+        padding-top: 15vh;
+        margin-top: 0;
+        padding-bottom: 5vh;
+    }
+
+    .contact-section {
+        padding-top: 5vh;
+        margin-top: 5vh;
+        padding-bottom: 5vh;
+        margin-bottom: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+
+    .contact-section h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-form button {
+        font-size: 1.1em;
+        padding: 10px 15px;
+    }
+    footer {
+        bottom: 0;
+        top: 100%;
+        padding-top: 2.5vh;
+        margin-top: 0vh;
+    }
+}
+/* Surface Duo (Landscape) */
+@media (device-width: 720px) and (device-height: 540px) and (orientation: landscape) {
+    header img {
+        width: 40%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    .contact-container {
+        padding-top: 25vh;
+        margin-top: 0;
+        padding-bottom: 10vh;
+    }
+
+    .contact-section {
+        padding-top: 5vh;
+        margin-top: 5vh;
+        padding-bottom: 5vh;
+        margin-bottom: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .contact-section {
+        padding: 6vh 5vw;
+        max-width: 85vw;
+    }
+
+    .contact-section h2 {
+        font-size: 2em;
+    }
+
+    .contact-form button {
+        font-size: 1.2em;
+        padding: 12px 20px;
+    }
+    footer {
+        bottom: 0;
+        top: 100%;
+        padding-top: 42vh;
+        margin-top: 0vh;
+    }
+}
+
+/* Google Nest Hub (1024px x 600px) */
+@media (device-width: 1024px) and (device-height: 600px) {
+    header img {
+        margin-top: 5vh;
+        width: 50%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+        padding-bottom: 5vh;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    .contact-container {
+        padding-bottom: 10vh;
+        margin-bottom: 0;
+        padding-top: 50vh;
+        margin-top: 0;
+    }
+
+    .contact-section {
+        padding-top: 8vh;
+        margin-top: 5vh;
+        padding-bottom: 8vh;
+        margin-bottom: 0;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+    .contact-section h2 {
+        font-size: 2.2em;
+    }
+
+    .contact-form label {
+        font-size: 1.2em;
+    }
+
+    .contact-form button {
+        font-size: 1.2em;
+        padding: 12px 20px;
+    }
+    footer {
+        bottom: 0;
+        top: 100%;
+        padding-top: 65vh;
+        margin-top: 0vh;
+    }
+}
+
+/* Google Nest Hub Max (1280px x 800px) */
+@media (device-width: 1280px) and (device-height: 800px) {
+    header img {
+        margin-top: 5vh;
+        width: 25%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+        padding-bottom: 5vh;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+        font-size: 1.5em;
+    }
+
+    .contact-container {
+        padding-bottom: 5vh;
+        margin-bottom: 0;
+        padding-top: 25vh;
+        margin-top: 0;
+    }
+
+    .contact-section {
+        padding-top: 8vh;
+        margin-top: 5vh;
+        padding-bottom: 5vh;
+        margin-bottom: 0;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+    .contact-section h2 {
+        font-size: 2.2em;
+    }
+
+    .contact-form label {
+        font-size: 1.2em;
+    }
+
+    .contact-form button {
+        font-size: 1.2em;
+        padding: 12px 20px;
+    }
+    footer {
+        bottom: 0;
+        top: 100%;
+        padding-top: 14vh;
+        margin-top: 0vh;
+    }
+}
+/*zfold5*/
+@media (device-width: 344px) and (device-height: 882px) {
+    header img {
+        margin-top: 5vh;
+        width: 50%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+        padding-bottom: 5vh;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 10px;
+    }
+
+    .contact-container {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .contact-section {
+        padding-top: 4vh;
+        margin-top: 5vh;
+        padding-bottom: 4vh;
+        margin-bottom: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .contact-section h2 {
+        font-size: 1.6em;
+    }
+
+    .contact-section p {
+        font-size: 1.1em;
+    }
+
+    .contact-form label {
+        font-size: 1em;
+    }
+
+    .contact-form button {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    footer {
+        padding-top: 0vh;
+        margin-top: 0vh;
+        bottom: 0;
+        top: 95%;
+    }
+}
