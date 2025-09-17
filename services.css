@@ -468,34 +468,17 @@ footer p {
 .hero, .spacer { width: 100%; }   /* replace any width: 100vw; */
 html, body { overflow-x: hidden; }
 
-/* Narrow phones (Flip 3 width) */
-@media (max-width: 420px) {
-  .text-box { margin: 5vh 4vw; text-align: center; }
 
+/* unify widths + centering for headings and paragraphs on small phones */
+@media (max-width: 420px) {
+  /* same side padding for both hero + sections */
+  .text-box { padding-inline: 6vw; }
+
+  /* use the same max line length + centering */
+  .text-box h3,
   .text-box p {
-    /* tighter column + slightly smaller text */
-    max-width: 30ch;
-    font-size: clamp(0.95rem, 3.4vw, 1.05rem);
-    line-height: 1.45;
-    padding-inline: 6vw;
-    margin: 0 auto 1.25rem;
-    overflow-wrap: anywhere;
-    hyphens: auto;
-  }
-}
-
-
-@supports (text-wrap: balance) {
-  .hero-content h1,
-  .text-box h3 { text-wrap: balance; }
-}
-
-/* Tighter on very small screens (e.g., Z Flip 3 width) */
-@media (max-width: 420px) {
-  .hero-content h1,
-  .text-box h3 {
-    max-width: 40ch;
-    padding-inline: 6vw;
-    font-size: clamp(1.6rem, 7.2vw, 2.1rem);  /* scale down a touch */
+    max-width: 30ch;           /* make them the same width */
+    margin-inline: auto;       /* center the block */
+    text-align: center;
   }
 }
