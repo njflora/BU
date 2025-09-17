@@ -475,3 +475,30 @@ footer p {
   .text-box { margin: 6vh 5vw; }   /* was 10vw; reduces squeeze */
   .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
 }
+.text-box {
+  display: flex;
+  flex-direction: column;   /* was row by default */
+  align-items: center;
+  text-align: center;
+  margin: 8vh 5vw;          /* a little tighter on mobile */
+}
+.text-box p {
+  max-width: 68ch;          /* readable line length */
+  padding-inline: 4vw;       /* side padding so text never touches edges */
+  margin: 0 auto 1.25rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;   /* allow breaks for long words */
+  word-break: normal;
+  hyphens: auto;
+}
+/* 3) Mobile sizing */
+@media (max-width: 480px) {
+  .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
+  .text-box { margin: 6vh 4vw; }
+}
+
+/* 4) Prevent horizontal overflow caused by 100vw */
+.hero, .spacer { width: 100%; }   /* replace any width: 100vw; */
+
+/* 5) Last-resort guard */
+html, body { overflow-x: hidden; }
