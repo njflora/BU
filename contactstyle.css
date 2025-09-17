@@ -1,3 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/jaapokki');
+@import url('https://fonts.cdnfonts.com/css/albula-condensed-pro');
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+
 /* General Styles */
 * {
     margin: 0;
@@ -14,16 +21,18 @@ body {
 
 /* Header Styling */
 header {
-    background-color: transparent;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.33);
     padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: sticky;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 9999;
+    -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -32,7 +41,7 @@ header .logo {
 
 header nav {
     position: absolute;
-    right: 1vw;
+    right: 1vw; /* Keep the navigation on the right side */
     top: 50%;
     transform: translateY(-50%);
 }
@@ -45,8 +54,8 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
-    font-family: 'Albula Condensed Pro', sans-serif;
-    font-weight: lighter;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
 }
 
 nav ul li a {
@@ -79,7 +88,9 @@ nav ul li a:hover span {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding-bottom: 15vh;
+    margin-top: -86px; /* Adjust for header height */
+    padding-top: 86px; /* Adjust for header height */
 }
 
 .contact-section {

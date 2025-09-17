@@ -2,7 +2,19 @@
 @import url('https://fonts.cdnfonts.com/css/albula-condensed-pro');
 @import url('https://fonts.googleapis.com/css2?family=Cousine&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
 /* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
 .wrapper{
     height: 100vh;
     overflow-y: auto;
@@ -15,19 +27,24 @@
     box-sizing: border-box;
 }
 .back-to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    font-size: 2em;
-    color: #021E29;
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
-    opacity: 0.7;
-    cursor: pointer;
-    z-index: 1000;
-    transition: opacity 0.3s, background-color 0.3s;
-}
+    width: 50px;
+    height: 50px;
+     position: fixed;
+     right: 25px;
+     bottom: 20px;
+     font-size: 2em;
+     color: #021E29;
+     background-color: white;
+     border-radius: 50%;
+     opacity: 0.7;
+     cursor: pointer;
+     z-index: 9999;
+     transition: opacity 0.3s, background-color 0.3s;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
 
 .back-to-top:hover {
     opacity: 1;
@@ -44,16 +61,18 @@ body {
 
 /* Header Styling */
 header {
-    background-color: transparent;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.33);
     padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 100vw;
+    position: sticky;
+    width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 9999;
+    -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -75,8 +94,9 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
-    font-family: 'Albula Condensed Pro', sans-serif;
+    font-family: 'Sono', sans-serif;
     font-weight: lighter;
+    font-weight: 500;
 }
 
 nav ul li a {
@@ -104,17 +124,26 @@ nav ul li a:hover span {
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/abouthero.jpg');
     background-size: cover;
-    background-position: top;
+    background-position: center 50%;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
+    isolation: isolate;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
     transform-style: preserve-3d;
-    z-index: -1;
-    transform: translateZ(-10px) scale(2);
+    z-index: 100;
+    transform: translateZ(1px) scale(1);
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 0 31.5vh 0);  /* hides 20vh from the bottom */
+    margin-top: -80px; /* Adjust for header height */
+    padding-top: 80px; /* Adjust for header height */
 }
 .scroll-indicator {
     position: absolute;
@@ -137,10 +166,10 @@ nav ul li a:hover span {
     }
 }
 .hero-content p {
-    font-family: 'Albula Condensed Pro', sans-serif;
-    font-weight: lighter;
+    font-family: 'Frank Ruhl Libre', sans-serif;
+    font-weight: 400;
     font-size: 4em;
-    margin-bottom: 20px;
+    margin-bottom: 25vh;
     /*-webkit-text-stroke:0.01px #ffffff;*/
     color: transparent;
     background-image: linear-gradient(#ffffff, #ffffff);
@@ -148,7 +177,6 @@ nav ul li a:hover span {
     -webkit-background-clip: text;
     background-position: -1500px 0;
     animation: backcolor 2s ease-in-out forwards;
-
 }
 @keyframes backcolor {
     100%{
@@ -163,11 +191,12 @@ nav ul li a:hover span {
     flex-direction: column;
     align-items: center;
     min-height: 400px;
-    padding-top: 5vh;
+    padding-top: 11.5vh;
     background-color:white;
     text-align: center;
-    z-index: 100;
+    z-index: -1;
     transform-style: preserve-3d;
+    margin-top: -40vh; /* Pull the section up to overlap the hero */
 }
 
 .text-image-section {
@@ -308,12 +337,12 @@ footer p {
     nav ul {
         display: block;
         padding: 0;
-        margin: 10px 0;
+        margin: 0;
     }
 
     nav ul li {
         display: block;
-        margin: 10px 0;
+        margin: 0;
     }
 
     .hero h2 {

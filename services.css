@@ -2,6 +2,10 @@
 @import url('https://fonts.cdnfonts.com/css/albula-condensed-pro');
 @import url('https://fonts.googleapis.com/css2?family=Cousine&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+
+:root { --header-h: 80px; }
 /* General Styles */
 .wrapper{
     height: 100vh;
@@ -15,18 +19,23 @@
     box-sizing: border-box;
 }
 .back-to-top {
+    width: 50px;
+    height: 50px;
      position: fixed;
-     right: 20px;
+     right: 25px;
      bottom: 20px;
      font-size: 2em;
      color: #0066FF;
      background-color: white;
      border-radius: 50%;
-     padding: 10px;
      opacity: 0.7;
      cursor: pointer;
-     z-index: 1000;
+     z-index: 9999;
      transition: opacity 0.3s, background-color 0.3s;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
  }
 
 .back-to-top:hover {
@@ -42,25 +51,27 @@ body {
     line-height: 1.6;
     background-color:white;
     color: #333;
+    margin: 0;
 }
 
 /* Header Styling */
 header {
-    background-color: transparent;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.33);
     padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 100vw;
+    position: sticky;
+    width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 9999;
+    -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
-    text-align: center;
-}
+    text-align: center;}
 
 header nav {
     position: absolute;
@@ -77,8 +88,8 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
-    font-family: 'Albula Condensed Pro', sans-serif;
-    font-weight: lighter;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
 }
 
 nav ul li a {
@@ -104,7 +115,7 @@ nav ul li a:hover span {
 }
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/abouthero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/HERO6.jpg');
     background-size: cover;
     background-position: top;
     height: 100vh;
@@ -117,10 +128,11 @@ nav ul li a:hover span {
     transform-style: preserve-3d;
     z-index: -1;
     transform: translateZ(-10px) scale(2);
+    margin-top: -80px; /* Adjust for header height */
+    padding-top: 80px; /* Adjust for header height */
 }
 .scroll-indicator {
     position: absolute;
-    left: 20px;
     bottom: 20px;
     font-size: 2em;
     color: white;
@@ -140,10 +152,9 @@ nav ul li a:hover span {
         transform: translateY(-5px);
     }
 }
-
-.hero-content p {
-    font-family: 'Albula Condensed Pro', sans-serif;
-    font-weight: lighter;
+.hero-content h1 {
+    font-family: 'Frank Ruhl Libre', sans-serif;
+    font-weight: 400;
     font-size: 4em;
     margin-bottom: 20px;
     /*-webkit-text-stroke:0.01px #ffffff;*/
@@ -153,6 +164,21 @@ nav ul li a:hover span {
     -webkit-background-clip: text;
     background-position: -1500px 0;
     animation: backcolor 2s ease-in-out forwards;
+
+}
+
+.hero-content p {
+    font-family: 'Frank Ruhl Libre', sans-serif;
+    font-weight: 200;
+    font-size: 2em;
+    margin-bottom: 20px;
+    /*-webkit-text-stroke:0.01px #ffffff;*/
+    color: transparent;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -1500px 0;
+    animation: backcolor 3s ease-in-out forwards;
 
 }
 @keyframes backcolor {
