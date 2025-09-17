@@ -242,39 +242,26 @@ nav ul li a:hover span {
     z-index: 100;
     transform-style: preserve-3d;
 }
-.text-box h3 span{
-    opacity: 1;
-}
-.text-box h3:first-child span.in-view{
-    animation: slide .75s .25s forwards;
-    color: #0066FF;
-}
-.text-box h3:last-child span.in-view{
-    animation: slide .9s .25s forwards;
-    color: #0066FF;
+.text-box h3 span,
+.text-box p  span {
+  display: inline-block;     /* transforms on inline text can be janky */
+  will-change: transform, opacity;
 }
 
-@keyframes slide {
-    0%{
-        opacity: 0;
-        transform: translate3d(0);
-    }
-    100%{
-        opacity: 1;
-        transform: translate3d(0, 120%, 0);
-    }
+/* fade in + subtle rise, ending at the natural position */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12%); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.text-box p {
-    font-size: 1.2em;
-    color: #000000;
-    font-family: 'Raleway', sans-serif;
-    font-weight: normal;
-    z-index: 100;
-    transform-style: preserve-3d;
-}
-.text-box p span{
-    opacity: 0;
-}
+
+/* use the new animation for your reveals */
+.text-box h3:first-child span.in-view { animation: fadeInUp .75s .25s forwards; }
+.text-box h3:last-child  span.in-view { animation: fadeInUp .90s .25s forwards; }
+.text-box p:first-child  span.in-view { animation: fadeInUp .75s .25s forwards; }
+.text-box p:last-child   span.in-view { animation: fadeInUp .90s .50s forwards; }
+
+/* keep the default hidden state you already have */
+.text-box p span { opacity: 0; }
 .text-box p:first-child span.in-view{
     animation: slide .75s .25s forwards;
     color: #000000;
