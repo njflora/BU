@@ -467,18 +467,18 @@ footer p {
 .hero, .spacer { width: 100%; }   /* replace any width: 100vw; */
 html, body { overflow-x: hidden; }
 
-/* Narrower, smaller paragraphs on small phones (Z Flip 3 etc.) */
+/* Narrow phones (Flip 3 width) */
 @media (max-width: 420px) {
-  .text-box { 
-    margin: 5vh 4vw;              /* a bit less outer space */
-  }
+  .text-box { margin: 5vh 4vw; text-align: center; }
+
   .text-box p {
-    font-size: clamp(0.95rem, 3.6vw, 1.08rem);  /* a touch smaller */
-    max-width: 32ch;              /* narrower column => fewer characters per line */
-    padding-inline: 6vw;          /* more side padding so nothing hugs the edge */
+    /* tighter column + slightly smaller text */
+    max-width: 30ch;
+    font-size: clamp(0.95rem, 3.4vw, 1.05rem);
     line-height: 1.45;
+    padding-inline: 6vw;
+    margin: 0 auto 1.25rem;
     overflow-wrap: anywhere;
     hyphens: auto;
   }
 }
-
