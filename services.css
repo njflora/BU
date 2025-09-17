@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
 
+
+
+
 :root { --header-h: 80px; }
 /* General Styles */
 .wrapper{
@@ -447,4 +450,28 @@ footer p {
     .text-box p {
         font-size: 1.5em;
     }
+}
+
+
+/* keep paragraphs neatly centered and inside the viewport */
+.text-box p {
+  max-width: 68ch;                 /* readable line length */
+  margin: 0 auto 20px;
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;         /* break very long words */
+  word-break: normal;
+  hyphens: auto;                   /* allow hyphenation */
+  -webkit-hyphens: auto;
+}
+
+/* nicer line breaks where supported */
+@supports (text-wrap: balance) {
+  .text-box p { text-wrap: balance; }
+}
+
+/* mobile sizing */
+@media (max-width: 480px) {
+  .text-box { margin: 6vh 5vw; }   /* was 10vw; reduces squeeze */
+  .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
 }
