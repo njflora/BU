@@ -158,7 +158,7 @@ footer p {
 /* Small mobile devices (iPhone SE and similar) */
 @media (device-width: 375px) and (device-height: 667px) {
     header img {
-        width: 40%;
+        width: 10%;
     }
 
     header {
@@ -218,7 +218,7 @@ footer p {
 /*S8*/
 @media (device-width: 360px) and (device-height: 740px) {
     header img {
-        width: 40%;
+        width: 10%;
     }
 
     header {
@@ -278,7 +278,7 @@ footer p {
 /* Medium mobile devices (e.g., iPhone XR, Galaxy S8) */
 @media (min-width: 376px) and (max-width: 768px) {
     header img {
-        width: 45%;
+        width: 10%;
     }
 
     header {
@@ -340,7 +340,7 @@ footer p {
 /* Tablets (portrait and landscape) */
 @media (min-width: 768px) and (max-width: 1024px) {
     header img {
-        width: 45%;
+        width: 10%;
     }
 
     header {
@@ -424,7 +424,7 @@ footer {
 /* Surface Duo (Portrait) */
 @media (device-width: 540px) and (device-height: 720px) and (orientation: portrait) {
     header img {
-        width: 40%;
+        width: 10%;
     }
 
     header {
@@ -479,7 +479,7 @@ footer {
 /* Surface Duo (Landscape) */
 @media (device-width: 720px) and (device-height: 540px) and (orientation: landscape) {
     header img {
-        width: 40%;
+        width: 10%;
     }
 
     header {
@@ -540,7 +540,7 @@ footer {
 @media (device-width: 1024px) and (device-height: 600px) {
     header img {
         margin-top: 5vh;
-        width: 50%;
+        width: 10%;
     }
 
     header {
@@ -599,7 +599,7 @@ footer {
 @media (device-width: 1280px) and (device-height: 800px) {
     header img {
         margin-top: 5vh;
-        width: 25%;
+        width: 10%;
     }
 
     header {
@@ -658,7 +658,7 @@ footer {
 @media (device-width: 344px) and (device-height: 882px) {
     header img {
         margin-top: 5vh;
-        width: 50%;
+        width: 10%;
     }
 
     header {
