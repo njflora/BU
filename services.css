@@ -525,3 +525,29 @@ html, body { overflow-x: hidden; }
     margin-inline: auto;
   }
 }
+@media (max-width: 430px) {
+  .about-section .text-box {
+    width: min(92vw, 28rem);      /* shared container width */
+    margin: 6vh auto;
+    padding-inline: 6vw;          /* side breathing room */
+    text-align: center;
+  }
+
+  /* Let both fill the same container */
+  .about-section .text-box h3,
+  .about-section .text-box p {
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: 0;            /* cancels the earlier .text-box p { padding-inline: 4% } */
+  }
+
+  /* Constrain the inner spans so wrapping is consistent */
+  .about-section .text-box > h3 > span,
+  .about-section .text-box > p  > span {
+    display: inline-block;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    text-wrap: balance;
+  }
+}
