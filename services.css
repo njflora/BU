@@ -463,3 +463,6 @@ footer p {
   .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
   .text-box   { margin: 6vh 4vw; }
 }
+
+.hero, .spacer { width: 100%; }   /* replace any width: 100vw; */
+html, body { overflow-x: hidden; }
