@@ -223,7 +223,7 @@ nav ul li a:hover span {
 
 .text-box {
     position: relative;
-    display: -ms-flexbox;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background-color:white;
@@ -232,8 +232,7 @@ nav ul li a:hover span {
     transform-style: preserve-3d;
     display: flex;
     justify-content: space-between;
-    margin: 10vh 10vw 10vh 10vw;
-}
+    margin: 8vh 5vw;}
 
 .text-box h3 {
     font-size: 2.2em;
@@ -266,7 +265,13 @@ nav ul li a:hover span {
     font-weight: normal;
     z-index: 100;
     transform-style: preserve-3d;
-}
+    max-width: 68ch;          /* readable line length */
+    padding-inline: 4vw;       /* keep text inside the screen edges */
+    margin: 0 auto 1.25rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;   /* break long words */
+    hyphens: auto;}
+
 .text-box p span{
     display: inline-block;
     will-change: transform, opacity;
@@ -449,3 +454,12 @@ footer p {
 }
 
 
+
+@supports (text-wrap: balance) {
+  .text-box p { text-wrap: balance; }
+}
+
+@media (max-width: 480px) {
+  .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
+  .text-box   { margin: 6vh 4vw; }
+}
