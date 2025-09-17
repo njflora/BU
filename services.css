@@ -474,7 +474,7 @@ html, body { overflow-x: hidden; }
 
   .text-box p {
     /* tighter column + slightly smaller text */
-    max-width: 60ch;
+    max-width: 30ch;
     font-size: clamp(0.95rem, 3.4vw, 1.05rem);
     line-height: 1.45;
     padding-inline: 6vw;
@@ -483,16 +483,7 @@ html, body { overflow-x: hidden; }
     hyphens: auto;
   }
 }
-/* Keep big headings from stretching too wide */
-.hero-content h1,
-.text-box h3 {          /* cap the line length */
-  margin: 0 auto 0.75rem;       /* center + spacing */
-  padding-inline: 4vw;          /* breathing room at edges */
-  text-align: center;
-  line-height: 1.15;
-  overflow-wrap: anywhere;      /* let long words wrap */
-  hyphens: auto;
-}
+
 
 @supports (text-wrap: balance) {
   .hero-content h1,
