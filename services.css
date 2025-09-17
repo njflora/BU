@@ -243,7 +243,8 @@ nav ul li a:hover span {
     transform-style: preserve-3d;
 }
 .text-box h3 span{
-    opacity: 1;
+    display: inline-block;
+    will-change: transform, opacity;
 }
 .text-box h3:first-child span.in-view{
     animation: slide .75s .25s forwards;
@@ -255,14 +256,8 @@ nav ul li a:hover span {
 }
 
 @keyframes slide {
-    0%{
-        opacity: 0;
-        transform: translate3d(0);
-    }
-    100%{
-        opacity: 1;
-        transform: translate3d(0, 120%, 0);
-    }
+    0%   { opacity: 0; transform: translateY(12%); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 .text-box p {
     font-size: 1.2em;
@@ -273,7 +268,8 @@ nav ul li a:hover span {
     transform-style: preserve-3d;
 }
 .text-box p span{
-    opacity: 0;
+    display: inline-block;
+    will-change: transform, opacity;
 }
 .text-box p:first-child span.in-view{
     animation: slide .75s .25s forwards;
