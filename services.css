@@ -474,7 +474,7 @@ html, body { overflow-x: hidden; }
 
   .text-box p {
     /* tighter column + slightly smaller text */
-    max-width: 30ch;
+    max-width: 45ch;
     font-size: clamp(0.95rem, 3.4vw, 1.05rem);
     line-height: 1.45;
     padding-inline: 6vw;
@@ -503,7 +503,7 @@ html, body { overflow-x: hidden; }
 @media (max-width: 420px) {
   .hero-content h1,
   .text-box h3 {
-    max-width: 16ch;
+    max-width: 20ch;
     padding-inline: 6vw;
     font-size: clamp(1.6rem, 7.2vw, 2.1rem);  /* scale down a touch */
   }
