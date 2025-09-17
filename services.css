@@ -506,4 +506,5 @@ html, body { overflow-x: hidden; }
     line-height: 1.4;
     font-size: clamp(1rem, 4vw, 1.2rem);
   }
+   .text-image-section .text-box p { padding-inline: 0 !important; }
 }
