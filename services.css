@@ -482,3 +482,28 @@ html, body { overflow-x: hidden; }
     text-align: center;
   }
 }
+/* SECTION titles (blue) + their paragraph: align edges on small phones */
+@media (max-width: 430px) {
+  .text-image-section .text-box { 
+    padding-inline: 6vw;            /* same side padding for both */
+  }
+
+  .text-image-section .text-box h3,
+  .text-image-section .text-box p {
+    max-width: 28ch;                 /* identical measure so edges line up */
+    margin-inline: auto;
+    text-align: center;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .text-image-section .text-box h3 {
+    line-height: 1.12;
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+  }
+
+  .text-image-section .text-box p {
+    line-height: 1.4;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+}
