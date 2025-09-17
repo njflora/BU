@@ -508,3 +508,20 @@ html, body { overflow-x: hidden; }
   }
    .text-image-section .text-box p { padding-inline: 0 !important; }
 }
+/* Mobile: make heading and paragraph share the exact same container width */
+@media (max-width: 430px) {
+  .text-image-section .text-box {
+    width: min(92vw, 28rem);   /* one shared measure for both */
+    margin-inline: auto;
+    padding-inline: 6vw;
+    text-align: center;
+  }
+
+  /* Let the text fill the container exactly */
+  .text-image-section .text-box h3,
+  .text-image-section .text-box p {
+    max-width: 100%;
+    padding-inline: 0;         /* cancel earlier p padding */
+    margin-inline: auto;
+  }
+}
