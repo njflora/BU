@@ -485,8 +485,7 @@ html, body { overflow-x: hidden; }
 }
 /* Keep big headings from stretching too wide */
 .hero-content h1,
-.text-box h3 {
-  max-width: 18ch;              /* cap the line length */
+.text-box h3 {          /* cap the line length */
   margin: 0 auto 0.75rem;       /* center + spacing */
   padding-inline: 4vw;          /* breathing room at edges */
   text-align: center;
@@ -504,7 +503,7 @@ html, body { overflow-x: hidden; }
 @media (max-width: 420px) {
   .hero-content h1,
   .text-box h3 {
-    max-width: 14ch;
+    max-width: 16ch;
     padding-inline: 6vw;
     font-size: clamp(1.6rem, 7.2vw, 2.1rem);  /* scale down a touch */
   }
