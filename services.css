@@ -242,26 +242,39 @@ nav ul li a:hover span {
     z-index: 100;
     transform-style: preserve-3d;
 }
-.text-box h3 span,
-.text-box p  span {
-  display: inline-block;     /* transforms on inline text can be janky */
-  will-change: transform, opacity;
+.text-box h3 span{
+    opacity: 1;
+}
+.text-box h3:first-child span.in-view{
+    animation: slide .75s .25s forwards;
+    color: #0066FF;
+}
+.text-box h3:last-child span.in-view{
+    animation: slide .9s .25s forwards;
+    color: #0066FF;
 }
 
-/* fade in + subtle rise, ending at the natural position */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(12%); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes slide {
+    0%{
+        opacity: 0;
+        transform: translate3d(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translate3d(0, 120%, 0);
+    }
 }
-
-/* use the new animation for your reveals */
-.text-box h3:first-child span.in-view { animation: fadeInUp .75s .25s forwards; }
-.text-box h3:last-child  span.in-view { animation: fadeInUp .90s .25s forwards; }
-.text-box p:first-child  span.in-view { animation: fadeInUp .75s .25s forwards; }
-.text-box p:last-child   span.in-view { animation: fadeInUp .90s .50s forwards; }
-
-/* keep the default hidden state you already have */
-.text-box p span { opacity: 0; }
+.text-box p {
+    font-size: 1.2em;
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+.text-box p span{
+    opacity: 0;
+}
 .text-box p:first-child span.in-view{
     animation: slide .75s .25s forwards;
     color: #000000;
@@ -440,52 +453,3 @@ footer p {
 }
 
 
-/* keep paragraphs neatly centered and inside the viewport */
-.text-box p {
-  max-width: 68ch;                 /* readable line length */
-  margin: 0 auto 20px;
-  line-height: 1.35;
-  text-align: center;
-  overflow-wrap: anywhere;         /* break very long words */
-  word-break: normal;
-  hyphens: auto;                   /* allow hyphenation */
-  -webkit-hyphens: auto;
-}
-
-/* nicer line breaks where supported */
-@supports (text-wrap: balance) {
-  .text-box p { text-wrap: balance; }
-}
-
-/* mobile sizing */
-@media (max-width: 480px) {
-  .text-box { margin: 6vh 5vw; }   /* was 10vw; reduces squeeze */
-  .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
-}
-.text-box {
-  display: flex;
-  flex-direction: column;   /* was row by default */
-  align-items: center;
-  text-align: center;
-  margin: 8vh 5vw;          /* a little tighter on mobile */
-}
-.text-box p {
-  max-width: 68ch;          /* readable line length */
-  padding-inline: 4vw;       /* side padding so text never touches edges */
-  margin: 0 auto 1.25rem;
-  line-height: 1.35;
-  overflow-wrap: anywhere;   /* allow breaks for long words */
-  word-break: normal;
-  hyphens: auto;
-}
-/* 3) Mobile sizing */
-@media (max-width: 480px) {
-  .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
-  .text-box { margin: 6vh 4vw; }
-}
-
-/* 4) Prevent horizontal overflow caused by 100vw */
-.hero, .spacer { width: 100%; }   /* replace any width: 100vw; */
-
-/* 5) Last-resort guard */
-html, body { overflow-x: hidden; }
