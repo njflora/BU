@@ -122,7 +122,7 @@ nav ul li a:hover span {
     background-size: cover;
     background-position: top;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,7 +232,7 @@ nav ul li a:hover span {
     transform-style: preserve-3d;
     display: flex;
     justify-content: space-between;
-    margin: 8vh 5vw;}
+    margin: 8vh 5%;}
 
 .text-box h3 {
     font-size: 2.2em;
@@ -266,7 +266,7 @@ nav ul li a:hover span {
     z-index: 100;
     transform-style: preserve-3d;
     max-width: 68ch;          /* readable line length */
-    padding-inline: 4vw;       /* keep text inside the screen edges */
+    padding-inline: 4%;       /* keep text inside the screen edges */
     margin: 0 auto 1.25rem;
     line-height: 1.35;
     overflow-wrap: anywhere;   /* break long words */
@@ -330,7 +330,7 @@ nav ul li a:hover span {
 /*newcurve*/
 .spacer{
     aspect-ratio: 960/150;
-    width: 100vw;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
