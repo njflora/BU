@@ -122,7 +122,7 @@ nav ul li a:hover span {
     background-size: cover;
     background-position: top;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -465,7 +465,7 @@ footer p {
   .text-box   { margin: 6vh 4vw; }
 }
 
-.hero, .spacer { width: 100%; }   /* replace any width: 100vw; */
+.spacer { width: 100%; }   /* replace any width: 100vw; */
 html, body { overflow-x: hidden; }
 
 
