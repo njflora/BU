@@ -97,7 +97,7 @@ nav ul li a:hover span {
 }
 
 .contact-section {
-    padding: 5vh 3vw;
+    padding: 12vh 8vw;
     text-align: center;
     background-color: rgba(8, 14, 44, 0.6);
     max-width: 800px;
@@ -110,9 +110,19 @@ nav ul li a:hover span {
     color: #ffffff;
 }
 
+.contact-section h2 {
+    font-size: 3em;
+    font-family: 'Albula Condensed Pro', sans-serif;
+}
+
+.contact-section p {
+    font-size: 1em;
+    font-family: 'Cousine', monospace;
+}
+
 .contact-form label {
     margin: 10px 0 5px;
-    font-size: 1.2em;
+    font-size: 3em;
     color: #ffffff;
 }
 
