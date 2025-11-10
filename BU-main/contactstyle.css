@@ -1,0 +1,239 @@
+@import url('https://fonts.cdnfonts.com/css/jaapokki');
+@import url('https://fonts.cdnfonts.com/css/albula-condensed-pro');
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+
+
+
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jaapokki', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.33);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    text-align: center;}
+
+header nav {
+    position: absolute;
+    right: 1vw; /* Keep the navigation on the right side */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    --a: -45deg; /* control the angle */
+    --t: .23em; /* thickness of the underline */
+}
+
+nav ul li a span {
+    --_s: calc(var(--t)*cos(var(--a)));
+    background:
+            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0)
+            bottom/var(--i,90%) var(--t) no-repeat;
+    padding: 0 .25em calc(var(--t) + .1em);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: .3s;
+    cursor: pointer;
+}
+nav ul li a:hover span {
+    --i: 100%;
+}
+
+/* Contact Section */
+.contact-container {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('img/contact1.jpg');
+    background-size: cover;
+    background-position: bottom;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15vh;
+    margin-top: -86px; /* Adjust for header height */
+    padding-top: 86px; /* Adjust for header height */
+}
+
+.contact-section {
+    padding: 12vh 8vw;
+    text-align: center;
+    background-color: rgba(8, 14, 44, 0.6);
+    max-width: 800px;
+    margin-top: 18vh;
+    border-radius: 8px;
+}
+
+.contact-section h2, .contact-section p {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.contact-section h2 {
+    font-size: 3em;
+    font-family: 'Albula Condensed Pro', sans-serif;
+}
+
+.contact-section p {
+    font-size: 1em;
+    font-family: 'Cousine', monospace;
+}
+
+.contact-form label {
+    margin: 10px 0 5px;
+    font-size: 3em;
+    color: #ffffff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6788FF;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #333757;
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0;
+}
+footer p {
+    color: #f4f4f4;
+    margin-top: 20px;
+    font-size: 0.9em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+/* Media Queries */
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .text-image-section {
+        flex-direction: column;
+    }
+
+    .text-box, .image-box {
+        width: 100%;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+    }
+
+    footer .footer-left, .footer-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* For Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h2 {
+        font-size: 3em;
+    }
+
+    .text-box h3 {
+        font-size: 2em;
+    }
+
+    .text-box p {
+        font-size: 1.1em;
+    }
+}
+
+/* For Desktops */
+@media (min-width: 1025px) {
+    .hero h2 {
+        font-size: 4em;
+    }
+
+    .text-box h3 {
+        font-size: 2.2em;
+    }
+
+    .text-box p {
+        font-size: 1.5em;
+    }
+}

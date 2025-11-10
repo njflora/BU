@@ -1,0 +1,553 @@
+@import url('https://fonts.cdnfonts.com/css/jaapokki');
+@import url('https://fonts.cdnfonts.com/css/albula-condensed-pro');
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+
+
+
+
+:root { --header-h: 80px; }
+/* General Styles */
+.wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.back-to-top {
+    width: 50px;
+    height: 50px;
+     position: fixed;
+     right: 25px;
+     bottom: 20px;
+     font-size: 2em;
+     color: #0066FF;
+     background-color: white;
+     border-radius: 50%;
+     opacity: 0.7;
+     cursor: pointer;
+     z-index: 9999;
+     transition: opacity 0.3s, background-color 0.3s;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+.back-to-top:hover {
+    opacity: 1;
+    background-color: #0066FF;
+    color: white;
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+    line-height: 1.6;
+    background-color:white;
+    color: #333;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.33);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    text-align: center;}
+
+header nav {
+    position: absolute;
+    right: 1vw; /* Keep the navigation on the right side */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    --a: -45deg; /* control the angle */
+    --t: .23em; /* thickness of the underline */
+}
+
+nav ul li a span {
+    --_s: calc(var(--t)*cos(var(--a)));
+    background:
+            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0)
+            bottom/var(--i,90%) var(--t) no-repeat;
+    padding: 0 .25em calc(var(--t) + .1em);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: .3s;
+    cursor: pointer;
+}
+nav ul li a:hover span {
+    --i: 100%;
+}
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/HERO6.jpg');
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+    transform: translateZ(-10px) scale(2);
+    margin-top: -80px; /* Adjust for header height */
+    padding-top: 80px; /* Adjust for header height */
+}
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    font-size: 2em;
+    color: white;
+    opacity: 1;
+    animation: bounce 2s infinite;
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+.hero-content h1 {
+    font-family: 'Frank Ruhl Libre', sans-serif;
+    font-weight: 400;
+    font-size: 4em;
+    margin-bottom: 20px;
+    /*-webkit-text-stroke:0.01px #ffffff;*/
+    color: transparent;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -1500px 0;
+    animation: backcolor 2s ease-in-out forwards;
+
+}
+
+.hero-content p {
+    font-family: 'Frank Ruhl Libre', sans-serif;
+    font-weight: 200;
+    font-size: 2em;
+    margin-bottom: 20px;
+    /*-webkit-text-stroke:0.01px #ffffff;*/
+    color: transparent;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -1500px 0;
+    animation: backcolor 3s ease-in-out forwards;
+
+}
+@keyframes backcolor {
+    100%{
+        background-position: 0 0;
+    }
+
+}
+/* About Section */
+
+.about-section {
+    position: relative;
+    display: -ms-flexbox;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding-top: 5vh;
+    background-color:white;
+    text-align: center;
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+
+.text-image-section {
+    position: relative;
+    display: -ms-flexbox;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding-top: 5vh;
+    background-color:white;
+    text-align: center;
+    z-index: 100;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: space-between;
+    margin: 10vh 10vw 10vh 10vw;
+}
+
+.text-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    text-align: center;
+    z-index: 100;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: space-between;
+    margin: 8vh 5%;}
+
+.text-box h3 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #0066FF;
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+.text-box h3 span{
+    display: inline-block;
+    will-change: transform, opacity;
+}
+.text-box h3:first-child span.in-view{
+    animation: slide .75s .25s forwards;
+    color: #0066FF;
+}
+.text-box h3:last-child span.in-view{
+    animation: slide .9s .25s forwards;
+    color: #0066FF;
+}
+
+@keyframes slide {
+    0%   { opacity: 0; transform: translateY(12%); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.text-box p {
+    font-size: 1.2em;
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    z-index: 100;
+    transform-style: preserve-3d;
+    max-width: 68ch;          /* readable line length */
+    padding-inline: 4%;       /* keep text inside the screen edges */
+    margin: 0 auto 1.25rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;   /* break long words */
+    hyphens: auto;}
+
+.text-box p span{
+    opacity: 0;
+    display: inline-block;
+    will-change: transform, opacity;
+}
+.text-box p:first-child span.in-view{
+    animation: slide .75s .25s forwards;
+    color: #000000;
+}
+.text-box p:last-child span.in-view{
+    animation: slide .9s .5s forwards;
+    color: #000000;
+}
+.image-box {
+    width: 45%;
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+/*curveuwu
+.curve{
+    position: absolute;
+    height: 225px;
+    width: 100vw;
+    bottom: 0;
+}
+.curve::before{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #021E29;
+    transform: translate(85%, 60%);
+    z-index: 100;
+}
+.curve::after{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: white;
+    transform: translate(85%, 60%);
+    z-index: 100;
+}
+*/
+/*newcurve*/
+.spacer{
+    aspect-ratio: 960/150;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.layer1{
+    background-image: url("img/servicewaves3.svg");
+}
+/* Footer Section */
+footer {
+    background-color:#0066FF;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 100;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    z-index: 100;
+}
+
+.footer-left, .footer-right {
+    width: 45%;
+}
+#first{
+    float: left;
+    width: 70%;
+}
+#second{
+    float: right;
+    width: 70%;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Media Queries */
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .text-image-section {
+        flex-direction: column;
+    }
+
+    .text-box, .image-box {
+        width: 100%;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+    }
+
+    footer .footer-left, .footer-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* For Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h2 {
+        font-size: 3em;
+    }
+
+    .text-box h3 {
+        font-size: 2em;
+    }
+
+    .text-box p {
+        font-size: 1.1em;
+    }
+}
+
+/* For Desktops */
+@media (min-width: 1025px) {
+    .hero h2 {
+        font-size: 4em;
+    }
+
+    .text-box h3 {
+        font-size: 2.2em;
+    }
+
+    .text-box p {
+        font-size: 1.5em;
+    }
+}
+
+
+
+@supports (text-wrap: balance) {
+  .text-box p { text-wrap: balance; }
+}
+
+@media (max-width: 480px) {
+  .text-box p { font-size: clamp(1rem, 4.2vw, 1.2rem); }
+  .text-box   { margin: 6vh 4vw; }
+}
+
+.spacer { width: 100%; }   /* replace any width: 100vw; */
+html, body { overflow-x: hidden; }
+
+
+/* unify widths + centering for headings and paragraphs on small phones */
+@media (max-width: 420px) {
+  /* same side padding for both hero + sections */
+  .text-box { padding-inline: 6vw; }
+
+  /* use the same max line length + centering */
+  .text-box h3,
+  .text-box p {
+    max-width: 30ch;           /* make them the same width */
+    margin-inline: auto;       /* center the block */
+    text-align: center;
+  }
+}
+/* SECTION titles (blue) + their paragraph: align edges on small phones */
+@media (max-width: 430px) {
+  .text-image-section .text-box { 
+    padding-inline: 6vw;            /* same side padding for both */
+  }
+
+  .text-image-section .text-box h3,
+  .text-image-section .text-box p {
+    max-width: 28ch;                 /* identical measure so edges line up */
+    margin-inline: auto;
+    text-align: center;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .text-image-section .text-box h3 {
+    line-height: 1.12;
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+  }
+
+  .text-image-section .text-box p {
+    line-height: 1.4;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+   .text-image-section .text-box p { padding-inline: 0 !important; }
+}
+/* Mobile: make heading and paragraph share the exact same container width */
+@media (max-width: 430px) {
+  .text-image-section .text-box {
+    width: min(92vw, 28rem);   /* one shared measure for both */
+    margin-inline: auto;
+    padding-inline: 6vw;
+    text-align: center;
+  }
+
+  /* Let the text fill the container exactly */
+  .text-image-section .text-box h3,
+  .text-image-section .text-box p {
+    max-width: 100%;
+    padding-inline: 0;         /* cancel earlier p padding */
+    margin-inline: auto;
+  }
+}
+@media (max-width: 430px) {
+  .about-section .text-box {
+    width: min(92vw, 28rem);      /* shared container width */
+    margin: 6vh auto;
+    padding-inline: 6vw;          /* side breathing room */
+    text-align: center;
+  }
+
+  /* Let both fill the same container */
+  .about-section .text-box h3,
+  .about-section .text-box p {
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: 0;            /* cancels the earlier .text-box p { padding-inline: 4% } */
+  }
+
+  /* Constrain the inner spans so wrapping is consistent */
+  .about-section .text-box > h3 > span,
+  .about-section .text-box > p  > span {
+    display: inline-block;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    text-wrap: balance;
+  }
+}
