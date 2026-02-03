@@ -58,7 +58,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
     line-height: 1.6;
-    background-color:white;
+    background-color:#111;
     color: #333;
 }
 
@@ -195,7 +195,7 @@ nav ul li a:hover span {
     align-items: center;
     min-height: 400px;
     padding-top: 11.5vh;
-    background-color:white;
+    background-color:#111;
     text-align: center;
     z-index: -1;
     transform-style: preserve-3d;
@@ -225,14 +225,14 @@ nav ul li a:hover span {
 .text-box h3 {
     font-size: 2.2em;
     margin-bottom: 20px;
-    color: #000000;
+    color: #9999;
     z-index: 100;
     transform-style: preserve-3d;
 }
 
 .text-box p {
     font-size: 1.2em;
-    color: #021E29;
+    color: #ffffff;
     font-family: 'Raleway', sans-serif;
     font-weight: normal;
     z-index: 100;
@@ -272,6 +272,29 @@ nav ul li a:hover span {
    box-shadow: 0 2px 10px rgba(0,0,0,0.15),
               0 18px 40px rgba(0,0,0,0.18);
 }
+
+.about-button-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-button {
+    padding: 12px 30px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.about-button:hover {
+    background-color: #cccccc;
+}
+
+
 /*curveuwu
 .curve{
     position: absolute;
@@ -312,11 +335,11 @@ nav ul li a:hover span {
     z-index: 100;
 }
 .layer1{
-    background-image: url("img/layeredwaves.svg");
+    background-image: url("img/thirdtomax.svg");
 }
 /* Footer Section */
 footer {
-    background-color:#021E29;
+    background-color:#4a8676;
     color: white;
     text-align: center;
     padding: 20px 0;

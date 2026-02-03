@@ -28,7 +28,7 @@
      right: 25px;
      bottom: 20px;
      font-size: 2em;
-     color: #0066FF;
+     color: #333;
      background-color: white;
      border-radius: 50%;
      opacity: 0.7;
@@ -43,7 +43,7 @@
 
 .back-to-top:hover {
     opacity: 1;
-    background-color: #0066FF;
+    background-color: #333;
     color: white;
 }
 
@@ -52,7 +52,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
     line-height: 1.6;
-    background-color:white;
+    background-color:#111;
     color: #333;
     margin: 0;
 }
@@ -199,7 +199,7 @@ nav ul li a:hover span {
     align-items: center;
     min-height: 400px;
     padding-top: 5vh;
-    background-color:white;
+    background-color:#111;
     text-align: center;
     z-index: 100;
     transform-style: preserve-3d;
@@ -212,7 +212,7 @@ nav ul li a:hover span {
     align-items: center;
     min-height: 400px;
     padding-top: 5vh;
-    background-color:white;
+    background-color:#111;
     text-align: center;
     z-index: 100;
     transform-style: preserve-3d;
@@ -226,7 +226,7 @@ nav ul li a:hover span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:white;
+    background-color:#111;
     text-align: center;
     z-index: 100;
     transform-style: preserve-3d;
@@ -237,7 +237,7 @@ nav ul li a:hover span {
 .text-box h3 {
     font-size: 2.2em;
     margin-bottom: 20px;
-    color: #0066FF;
+    color: #9999;
     z-index: 100;
     transform-style: preserve-3d;
 }
@@ -247,11 +247,11 @@ nav ul li a:hover span {
 }
 .text-box h3:first-child span.in-view{
     animation: slide .75s .25s forwards;
-    color: #0066FF;
+    color: #ffffff;
 }
 .text-box h3:last-child span.in-view{
     animation: slide .9s .25s forwards;
-    color: #0066FF;
+    color: #ffffff;
 }
 
 @keyframes slide {
@@ -260,7 +260,7 @@ nav ul li a:hover span {
 }
 .text-box p {
     font-size: 1.2em;
-    color: #000000;
+    color: #ffffff;
     font-family: 'Raleway', sans-serif;
     font-weight: normal;
     z-index: 100;
@@ -279,11 +279,11 @@ nav ul li a:hover span {
 }
 .text-box p:first-child span.in-view{
     animation: slide .75s .25s forwards;
-    color: #000000;
+    color: #ffffff;
 }
 .text-box p:last-child span.in-view{
     animation: slide .9s .5s forwards;
-    color: #000000;
+    color: #ffffff;
 }
 .image-box {
     width: 45%;
@@ -298,6 +298,28 @@ nav ul li a:hover span {
     z-index: 100;
     transform-style: preserve-3d;
 }
+
+.about-button-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-button {
+    padding: 12px 30px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.about-button:hover {
+    background-color: #cccccc;
+}
+
 /*curveuwu
 .curve{
     position: absolute;
@@ -338,11 +360,12 @@ nav ul li a:hover span {
     z-index: 100;
 }
 .layer1{
-    background-image: url("img/servicewaves3.svg");
+    background-image: url("img/weird.svg");
+    width: 1vw;
 }
 /* Footer Section */
 footer {
-    background-color:#0066FF;
+    background-color:#4c4c7b;
     color: white;
     text-align: center;
     padding: 20px 0;
