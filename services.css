@@ -423,7 +423,7 @@ footer p {
 
     nav ul li {
         display: block;
-        margin: 10px 0;
+        margin: 20px 0;
     }
 
     .hero h2 {
@@ -461,6 +461,7 @@ footer p {
     .text-box p {
         font-size: 1.1em;
     }
+
 }
 
 /* For Desktops */
