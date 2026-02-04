@@ -184,6 +184,7 @@ footer p {
     nav ul li {
         display: block;
         margin: 10px 0;
+        font-size: 0.75em;
     }
 
     .hero h2 {
