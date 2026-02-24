@@ -204,11 +204,59 @@ nav ul li a:hover span {
 
 .text-image-section {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     transform-style: preserve-3d;
     margin-bottom: 5%;
+}
+@media (min-width: 1200px) {
+    .text-image-section {
+        flex-wrap: wrap;
+    }
+    
+    .imgCaption {
+        flex: 0 0 100%;
+        text-align: center;
+        margin-top: 1rem;
+        transform: translateX(25vw);
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 1199px) and (min-width: 768px) {
+
+    .text-image-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-box,
+    .image-box {
+        width: 100%;
+    }
+
+    .imgCaption {
+        flex: 0 0 100%;
+        margin: 1rem 0 0 0;
+        transform: none;
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 767px) {
+
+    .text-box h3 {
+        font-size: 1.8em;
+    }
+
+    .text-box p {
+        font-size: 1em;
+    }
+
+    .imgCaption {
+        font-size: 1em;
+    }
 }
 
 .reverse {
