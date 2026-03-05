@@ -577,3 +577,23 @@ html, body { overflow-x: hidden; }
     text-wrap: balance;
   }
 }
+.wrapper{
+    scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.scroll-down:hover {
+  transform: translateX(-50%) scale(1.1);
+}
